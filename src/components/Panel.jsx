@@ -13,18 +13,18 @@ function Panel() {
 
         <div className=' bg-gray-600 container flex justify-center'>
             <button onClick={()=>agregarProducto('piña')}>asd</button>
-            <div className='w-2/4'>
-                <table className="table-fixed mb-5 w-full bg-red-400">
-                    <thead className=''>
-                        <tr>
-                            <th className='py-5'><p className='text-2xl'>Productos</p></th>
+            <div className='w-2/4 rounded-lg'>
+                <table className="table-fixed my-5 w-full bg-gray-300 rounded-xl ">
+                    <thead className='border rounded-t-xl border-gray-600'>
+                        <tr  >
+                            <th className='py-5 '><p className='text-2xl'>Productos</p></th>
                             <th className='py-5'><p className='text-2xl'>Acciones</p></th>
                         </tr>
                     </thead>
                     <tbody>
                         {productos.map((p) => 
-                        <tr key={p} className='text-center'>
-                            <td>{p}</td>
+                        <tr  key={p} className='text-center border rounded-t-xl border-gray-400'>
+                            <td >{p}</td>
                             <td><Button>Listo</Button></td>
                         </tr>)}
                         

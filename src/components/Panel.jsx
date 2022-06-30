@@ -1,18 +1,16 @@
 import {useState} from 'react'
 import Button from './Button'
 
-function Panel() {
-    const [productos, setProductos] = useState(['Aceite','Te','Repasadores',])
+function Panel(productos) {
+   console.log('hi',productos)
 
-    const agregarProducto = (prod) => {
-        setProductos([...productos,prod])
-    }
+    
 
   return (
     <div className='col-span-5 container mx-auto px-4 items-center'>
 
         <div className=' bg-gray-600 container flex justify-center'>
-            <button onClick={()=>agregarProducto('piña')}>asd</button>
+            
             <div className='w-2/4 rounded-lg'>
                 <table className="table-fixed my-5 w-full bg-gray-300 rounded-xl ">
                     <thead className=' rounded-xl '>

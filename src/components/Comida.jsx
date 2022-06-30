@@ -1,7 +1,9 @@
 import { useState } from 'react'
+import CardComida from './CardComida';
 
 function Comida() {
     const [opcion, setOpcion] = useState("")
+    const [comida, setComida] = useState("")
 
     const comidas = 
         {principal:["Pollo", "Costeleta",
@@ -38,7 +40,7 @@ function Comida() {
         const comidasFn = (opcion) => {
             if(opcion != ""){
 
-                console.log( comidas[opcion][generateRandom( comidas[opcion].length)])
+               setComida( comidas[opcion][generateRandom( comidas[opcion].length)])
             }else{
                 console.log("error")
             }
@@ -54,7 +56,7 @@ function Comida() {
             <option value="completo">Completo</option>
         </select>
         <button  className='btn btn-primary btn-outline' onClick={()=>comidasFn(opcion)} >Tirar</button>
-        
+        <CardComida>{comida?? comida}</CardComida>
     </div>
   )
 }

@@ -39,8 +39,7 @@ function Comida() {
 
         const comidasFn = (opcion) => {
             if(opcion != ""){
-
-               setComida( comidas[opcion][generateRandom( comidas[opcion].length)])
+                setComida( comidas[opcion][generateRandom( comidas[opcion].length)])
             }else{
                 console.log("error")
             }
@@ -56,7 +55,7 @@ function Comida() {
             <option value="completo">Completo</option>
         </select>
         <button  className='btn btn-primary btn-outline' onClick={()=>comidasFn(opcion)} >Tirar</button>
-        <CardComida>{comida?? comida}</CardComida>
+        <CardComida>{comida ?? comida}</CardComida>
     </div>
   )
 }

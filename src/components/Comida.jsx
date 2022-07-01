@@ -2,10 +2,9 @@ import { useState } from 'react'
 import CardComida from './CardComida';
 
 function Comida() {
-    const [opcion, setOpcion] = useState("")
-    const [comida, setComida] = useState("")
+    const [comidas, setComidas] = useState([])
 
-    const comidas = 
+    const comida = 
         {principal:["Pollo", "Costeleta",
             "Tarta",
             "Hamburguesa", 
@@ -37,25 +36,14 @@ function Comida() {
             return Math.floor(Math.random() * max);
         }
 
-        const comidasFn = (opcion) => {
-            if(opcion != ""){
-                setComida( comidas[opcion][generateRandom( comidas[opcion].length)])
-            }else{
-                console.log("error")
-            }
+        const comidasFn = () => {
+                setComidas( [comida.principal[generateRandom( comida.principal.length)] + " con " + comida.secundario[generateRandom( comida.secundario.length)],comida.completo[generateRandom( comida.completo.length)] ])
         }
 
-        
   return (
-    <div>
-        <select className='w-48 text-black text-center m-10 text-base p-3.5 rounded-xl' name="" id="" placeholder='-- Opcion --' onChange={e => setOpcion(e.target.value)}>
-            <option value="">-- Opcion --</option>
-            <option value="principal">Principal</option>
-            <option value="secundario">Secundario</option>
-            <option value="completo">Completo</option>
-        </select>
-        <button  className='btn btn-primary btn-outline' onClick={()=>comidasFn(opcion)} >Tirar</button>
-        <CardComida>{comida ?? comida}</CardComida>
+    <div className='container items-center text-center pt-6'>
+        <button  className='btn btn-primary btn-outline' onClick={()=>comidasFn()} >Tirar</button>
+        <CardComida comidas={comidas}></CardComida>
     </div>
   )
 }
